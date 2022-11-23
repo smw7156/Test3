@@ -3,7 +3,8 @@ name: Workflow_1
 on: 
   pull_request: 
     branches: [ dev ]
-    types: [ closed ]
+    types:
+      - closed
     
 
 jobs:
