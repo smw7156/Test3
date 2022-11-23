@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: print message
-      - run: echo "1st message"
+        run: echo 1st message
