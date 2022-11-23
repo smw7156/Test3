@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textView.text = "this is text"
+        binding.textView.text = getString(R.string.this_is_text)
     }
 }
