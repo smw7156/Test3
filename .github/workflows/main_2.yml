@@ -1,0 +1,38 @@
+name: Workflow_2
+
+on: 
+  pull_request: 
+    branches: [ 'pre-master' ]
+    types:
+      - closed
+    
+
+jobs:
+  build: 
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    
+    steps:
+      # checking out the code to the environment
+      - uses: actions/checkout@v3
+      
+      - name: print message
+        run: echo creating release build
+        
+      - name: set up Java
+        uses: actions/setup-java@v3
+        with: 
+          distribution: 'adopt'
+          java-version: 11
+      
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        
+      - name: Build debug APK
+        run: ./gradlew assembleRelease 
+
+      - name: Upload Debug APKs
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test-App
+          path: app/build/outputs/
