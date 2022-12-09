@@ -2,6 +2,7 @@ package com.shadman.test3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.shadman.test3.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,5 +14,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.textView.text = getString(R.string.this_is_text)
         binding.button.text = getString(R.string.click_me)
+
+        binding.button.setOnClickListener {
+            if (BuildConfig.DEBUG){
+                Toast.makeText(this,"this is Debug build", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this,"this is Release build", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 }
