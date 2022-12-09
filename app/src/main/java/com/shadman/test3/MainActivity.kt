@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             if (BuildConfig.DEBUG){
-                Toast.makeText(this,"this is Debug build", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.this_is_debug_build), Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this,"this is Release build", Toast.LENGTH_SHORT).show()
             }
