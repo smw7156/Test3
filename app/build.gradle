@@ -17,10 +17,27 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
         release {
+            storeFile file(getSignInKey('storeFile'))
+            storePassword (getSignInKey('storePassword'))
+            keyAlias (getSignInKey('keyAlias'))
+            keyPassword (getSignInKey('keyPassword'))
+        }
+    }
+
+    buildTypes {
+        releaser {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.release
+        }
+        debugger {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+            applicationIdSuffix ".debug"
         }
     }
     compileOptions {
@@ -35,6 +52,12 @@ android {
         viewBinding true
         dataBinding true
     }
+}
+
+def getSignInKey(key) {
+    def Properties properties = new Properties()
+    properties.load(new FileInputStream(new File("signinKey.properties")))
+    properties[key]
 }
 
 dependencies {
