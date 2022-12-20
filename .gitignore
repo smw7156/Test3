@@ -1,6 +1,4 @@
 *.iml
-*.jks
-*.pepk
 
 .gradle
 /local.properties
@@ -17,7 +15,5 @@
 /captures
 .externalNativeBuild
 .cxx
-local.properties
 
 /app/releaser
-signinKey.properties
