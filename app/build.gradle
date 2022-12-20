@@ -18,7 +18,7 @@ android {
     }
 
     signingConfigs {
-        release {
+        releaser {
             storeFile file(getSignInKey('storeFile'))
             storePassword (getSignInKey('storePassword'))
             keyAlias (getSignInKey('keyAlias'))
@@ -31,7 +31,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             debuggable false
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.releaser
         }
         debugger {
             minifyEnabled false
