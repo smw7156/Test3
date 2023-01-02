@@ -2,4 +2,5 @@
     <string name="app_name">test3</string>
     <string name="this_is_text">this is text</string>
     <string name="click_me">click me</string>
+    <string name="this_is_debug_build">this is Debug build</string>
 </resources>
