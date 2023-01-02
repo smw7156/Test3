@@ -36,3 +36,11 @@ jobs:
         with:
           name: Test-App
           path: app/build/outputs/
+
+      - name: Upload Debug build to firebase
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
+          app_file: qa_build.apk
+          tester_groups: dev, QA, others
