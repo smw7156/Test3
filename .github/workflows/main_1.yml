@@ -42,5 +42,5 @@ jobs:
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
-          app_file: app/build/outputs/apk/debugger/app-debugger.apk
-          tester_groups: dev, QA, others
+          file: app/build/outputs/apk/debugger/app-debugger.apk
+          groups: dev, QA, others
