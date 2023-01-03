@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
                     .show()
             }
         }
+        Toast.makeText(this,"some Text", Toast.LENGTH_SHORT).show()
 
     }
 }
