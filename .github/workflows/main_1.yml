@@ -43,4 +43,4 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
           file: app/build/outputs/apk/debugger/app-debugger.apk
-          groups: dev, QA, others
+          groups: demoGRP
