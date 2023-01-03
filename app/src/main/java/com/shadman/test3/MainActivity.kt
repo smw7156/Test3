@@ -16,12 +16,15 @@ class MainActivity : AppCompatActivity() {
         binding.button.text = getString(R.string.click_me)
 
         binding.button.setOnClickListener {
-            if (BuildConfig.DEBUG) {
-                Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-                Toast.makeText(this, getString(R.string.this_is_release_build), Toast.LENGTH_SHORT)
-                    .show()
+            when {
+                BuildConfig.DEBUG -> {
+                    Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_SHORT)
+                        .show()
+                }
+                else -> {
+                    Toast.makeText(this, getString(R.string.this_is_release_build), Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         }
 
