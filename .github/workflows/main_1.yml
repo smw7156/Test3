@@ -16,8 +16,8 @@ jobs:
       # checking out the code to the environment
       - uses: actions/checkout@v2
       
-      - name: print message
-        run: echo 1st message
+#      - name: print message
+#        run: echo 1st message
         
       - name: set up Java
         uses: actions/setup-java@v2
@@ -31,14 +31,14 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDebug 
 
-      - name: Upload Debug APKs
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test-App
-          path: app/build/outputs/
+#      - name: Upload Debug APKs
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Test-App
+#          path: app/build/outputs/
 
       - name: Upload Debug build to firebase
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.3.2
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
