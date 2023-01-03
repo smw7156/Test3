@@ -38,7 +38,7 @@ jobs:
 #          path: app/build/outputs/
 
       - name: Upload Debug build to firebase
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.3.2
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.3.3
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
