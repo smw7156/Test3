@@ -17,14 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             when {
-                BuildConfig.DEBUG -> {
-                    Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_SHORT)
-                        .show()
-                }
-                else -> {
-                    Toast.makeText(this, getString(R.string.this_is_release_build), Toast.LENGTH_SHORT)
-                        .show()
-                }
+                BuildConfig.DEBUG -> Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_SHORT)
+                    .show()
+                else -> Toast.makeText(this, getString(R.string.this_is_release_build), Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
