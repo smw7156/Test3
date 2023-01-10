@@ -9,11 +9,38 @@ on:
 
 jobs:
   build: 
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     
     steps:
       # checking out the code to the environment
       - uses: actions/checkout@v2
       
-      - name: print message
-        run: echo 1st message
+#      - name: print message
+#        run: echo 1st message
+        
+      - name: set up Java
+        uses: actions/setup-java@v2
+        with: 
+          distribution: 'adopt'
+          java-version: 11
+      
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        
+      - name: Build debug APK
+        run: ./gradlew assembleDebug 
+
+#      - name: Upload Debug APKs
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Test-App
+#          path: app/build/outputs/
+
+      - name: Upload Debug build to firebase
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.3.3
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
+          file: app/build/outputs/apk/debugger/app-debugger.apk
+          groups: demoGRP
