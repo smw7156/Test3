@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         binding.textView.text = getString(R.string.this_is_text)
         binding.button.text = getString(R.string.click_me)
 
-        binding.button.setOnClickListener {
+        binding.button.setOnClickListener { view ->
             when {
                 BuildConfig.DEBUG -> Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_SHORT)
                     .show()
