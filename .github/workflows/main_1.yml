@@ -41,6 +41,6 @@ jobs:
         uses: wzieba/Firebase-Distribution-Github-Action@v1.3.3
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
-          serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
+          serviceCredentialsFile: ${{secrets.CREDENTIAL_FILE_CONTENT}}
           file: app/build/outputs/apk/debugger/app-debugger.apk
           groups: demoGRP
