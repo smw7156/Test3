@@ -1,35 +1,35 @@
 name: Workflow_1
 
-on: 
-  pull_request: 
+on:
+  pull_request:
     branches: [ dev ]
     types:
       - closed
-    
+
 
 jobs:
-  build: 
+  build:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    
+
     steps:
       # checking out the code to the environment
       - uses: actions/checkout@v2
-      
+
 #      - name: print message
 #        run: echo 1st message
-        
+
       - name: set up Java
         uses: actions/setup-java@v2
-        with: 
+        with:
           distribution: 'adopt'
           java-version: 11
-      
+
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-        
+
       - name: Build debug APK
-        run: ./gradlew assembleDebug 
+        run: ./gradlew assembleDebug
 
 #      - name: Upload Debug APKs
 #        uses: actions/upload-artifact@v2
@@ -39,7 +39,7 @@ jobs:
 
       - name: Upload Debug build to firebase 2
         uses: FirebaseExtended/action-hosting-deploy@v0
-        repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEST_3_F4498 }}"
           projectId: test-3-f4498
 
