@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener { view ->
             when {
                 BuildConfig.DEBUG -> {
-                    Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_LONG)
+                    Toast.makeText(this,
+                        getString(R.string.this_is_debug_build),
+                        Toast.LENGTH_LONG)
                         .show()
                 }
                 else -> {
