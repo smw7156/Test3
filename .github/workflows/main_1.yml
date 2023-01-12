@@ -39,6 +39,7 @@ jobs:
 
       - name: Upload Debug build to firebase 2
         uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEST_3_F4498 }}"
           projectId: test-3-f4498
