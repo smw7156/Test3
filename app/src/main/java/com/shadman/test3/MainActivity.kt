@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.this_is_debug_build), Toast.LENGTH_LONG)
                         .show()
                 }
-                else -> Toast.makeText(this, getString(R.string.this_is_release_build), Toast.LENGTH_LONG)
-                    .show()
+                else -> {
+                    Toast.makeText(this, getString(R.string.this_is_release_build), Toast.LENGTH_LONG)
+                        .show()
+                }
             }
         }
         Toast.makeText(this,getString(R.string.some_text), Toast.LENGTH_LONG).show()
