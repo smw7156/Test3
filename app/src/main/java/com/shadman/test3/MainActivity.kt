@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 else -> {
                     Toast.makeText(
                         this,
-                        getString(R.string.this_is_release_build),
+                        getString(R.string.txt_this_is_release_build),
                         Toast.LENGTH_LONG
                     )
                         .show()
