@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#checking out the code to the environment
+      # checking out the code to the environment
       - uses: actions/checkout@v2
 
 #      - name: print message
@@ -37,19 +37,19 @@ jobs:
 #          name: Test-App
 #          path: app/build/outputs/
 
-       - name: upload Debug build to firebase3
-         uses: hasretsariyer/firebase-app-distribution-github-action@v1
-         with:
-           app_id: ${{secrets.FIREBASE_APP_ID}}
-           firebase_token: ${{secrets.FIREBASE_TOKEN}}
-           app_file: app-debug.apk
-           tester_groups: demoGRP
+      - name: Firebase App Distribution3
+        uses: hasretsariyer/firebase-app-distribution-github-action@v1
+        with:
+          app_id: "${{ secrets.FIREBASE_APP_ID }}"
+          firebase_token: "${{ secrets.FIREBASE_TOKEN }}"
+          app_file: app-debug.apk
+          tester_groups: demoGRP
 
 #      - name: Upload Debug build to firebase 2
 #        uses: FirebaseExtended/action-hosting-deploy@v0
 #        with:
 #          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-#         firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEST_3_F4498 }}"
+#          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEST_3_F4498 }}"
 #          projectId: test-3-f4498
 
 
@@ -60,4 +60,3 @@ jobs:
 #          serviceCredentialsFile: "${{ secrets.CREDENTIAL_FILE_CONTENT }}"
 #          file: app/build/outputs/apk/debugger/app-debugger.apk
 #          groups: demoGRP
-
