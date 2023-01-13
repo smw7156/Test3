@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 BuildConfig.DEBUG -> {
                     Toast.makeText(
                         this,
-                        getString(R.string.this_is_debug_build),
+                        getString(R.string.txt_this_is_debug_build),
                         Toast.LENGTH_LONG
                     )
                         .show()
