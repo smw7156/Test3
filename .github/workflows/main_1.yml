@@ -38,7 +38,7 @@ jobs:
 #          path: app/build/outputs/
 
       - name: Firebase App Distribution3
-        uses: hasretsariyer/firebase-app-distribution-github-action@v1
+        uses: hasretsariyer/firebase-app-distribution-github-action@v1.0
         with:
           app_id: "${{ secrets.FIREBASE_APP_ID }}"
           firebase_token: "${{ secrets.FIREBASE_TOKEN }}"
