@@ -36,6 +36,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
         Toast.makeText(this, getString(R.string.some_text), Toast.LENGTH_LONG).show()
-
     }
 }
