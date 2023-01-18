@@ -25,8 +25,8 @@ jobs:
           distribution: 'adopt'
           java-version: 11
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
+#      - name: Make gradlew executable
+#        run: chmod +x ./gradlew
 
 #      - name: Build debug APK
 #        run: ./gradlew assembleDebug
