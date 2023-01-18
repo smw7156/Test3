@@ -14,7 +14,7 @@ jobs:
 
     steps:
       # checking out the code to the environment
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
 
 #      - name: print message
 #        run: echo 1st message
@@ -37,8 +37,8 @@ jobs:
 #          name: Test-App
 #          path: app/build/outputs/
 
-      - name: Setting git config for safe directory
-        run: git config --global --add safe.directory '*'
+#      - name: Setting git config for safe directory
+#        run: git config --global --add safe.directory ./.github/workflows
         
       - name: Firebase App Distribution3
         uses: hasretsariyer/firebase-app-distribution-github-action@v1.0
