@@ -22,8 +22,7 @@ class MainActivity : AppCompatActivity() {
                         this,
                         getString(R.string.txt_this_is_debug_build),
                         Toast.LENGTH_LONG
-                    )
-                        .show()
+                    ).show()
                 }
                 else -> {
                     Toast.makeText(
