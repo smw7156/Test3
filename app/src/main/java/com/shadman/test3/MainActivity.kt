@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
                         this,
                         getString(R.string.txt_this_is_release_build),
                         Toast.LENGTH_LONG
-                    )
-                        .show()
+                    ).show()
                 }
             }
         }
