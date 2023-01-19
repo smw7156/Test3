@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.textView.text = getString(R.string.this_is_text)
         binding.button.text = getString(R.string.click_me)
         binding.button.setOnClickListener {
