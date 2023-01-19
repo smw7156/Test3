@@ -13,19 +13,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
+    - name: Firebase App Distribution
+      uses: hasretsariyer/firebase-app-distribution-github-action@v1.0
+      with:
+        app_id: ${{secrets.FIREBASE_APP_ID}}
+        firebase_token: ${{secrets.FIREBASE_TOKEN}}
+        app_file: app-debugger.apk
+        tester_groups: demoGRP
+          
+          
+          
       # checking out the code to the environment
-      - uses: actions/checkout@v2
-        with:
-          set-safe-directory: '*'
+#      - uses: actions/checkout@v2
+#        with:
+#          set-safe-directory: '*'
 
 #      - name: print message
 #        run: echo 1st message
 
-      - name: set up Java
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'adopt'
-          java-version: 11
+ #     - name: set up Java
+ #       uses: actions/setup-java@v2
+ #       with:
+ #         distribution: 'adopt'
+ #         java-version: 11
 
 #      - name: Make gradlew executable
 #        run: chmod +x ./gradlew
@@ -42,13 +53,13 @@ jobs:
 #      - name: Setting git config for safe directory
 #        run: git config --global --add safe.directory ./.github/workflows
         
-      - name: Firebase App Distribution3
-        uses: hasretsariyer/firebase-app-distribution-github-action@v1.0
-        with:
-          app_id: "${{ secrets.FIREBASE_APP_ID }}"
-          firebase_token: "${{ secrets.FIREBASE_TOKEN }}"
-          app_file: app-debug.apk
-          tester_groups: demoGRP
+#      - name: Firebase App Distribution3
+#        uses: hasretsariyer/firebase-app-distribution-github-action@v1.0
+#        with:
+#          app_id: "${{ secrets.FIREBASE_APP_ID }}"
+#          firebase_token: "${{ secrets.FIREBASE_TOKEN }}"
+#          app_file: app-debug.apk
+#          tester_groups: demoGRP
 
 #      - name: Upload Debug build to firebase 2
 #        uses: FirebaseExtended/action-hosting-deploy@v0
