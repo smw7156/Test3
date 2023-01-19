@@ -14,7 +14,9 @@ jobs:
 
     steps:
       # checking out the code to the environment
-#      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          set-safe-directory: '*'
 
 #      - name: print message
 #        run: echo 1st message
