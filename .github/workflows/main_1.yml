@@ -1,15 +1,17 @@
 name: Workflow_1
 
 on:
-  pull_request:
-    branches: [ dev ]
-    types:
-      - closed
+#  pull_request:
+#    branches: [ dev ]
+#    types:
+#      - closed
 
+  push:
+    branches: [ dev ]
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true
+#    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
